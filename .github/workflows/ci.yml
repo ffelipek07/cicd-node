@@ -21,7 +21,7 @@ jobs:
         with:
             node-version: '15'
             
-      - name: Install NPN
+      - name: Install NPM
         run: npm install
         working-directory: ${{ env.WORKING_DIRECTORY }}
 
@@ -48,7 +48,7 @@ jobs:
       - name: UPLOAD to S3
         uses: jakejarvis/s3-sync-action@master
         with:
-          args: --acl public-read --follow-symlinks --delete
+          args: --follow-symlinks --delete
         env:
           AWS_S3_BUCKET: buildreposdevops 
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
