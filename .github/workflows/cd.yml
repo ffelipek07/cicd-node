@@ -40,10 +40,10 @@ jobs:
 
       - name: Download Buil S3
         run: |
-          echo "terraform" {
+          echo "terraform {
             backend \"s3\" {
               bucket = \"statefilegeneral\"
-              key =\"terraform/${{ github.event.pull_request.base.ref}}/terraform.tfstate\"
+              key = \"terraform/${{ github.event.pull_request.base.ref}}/terraform.tfstate\"
               region = \"us-east-1\"
               encrypt = true
             }
