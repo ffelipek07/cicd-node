@@ -27,7 +27,7 @@ jobs:
       - name: Download Buil S3
         run: |
           mkdir -p ${{ env.WORKING_DIRECTORY }}/build
-          aws s3 s3://buildreposdevops/ ${{ env.WORKING_DIRECTORY }}/build --recursive
+          aws s3 cp s3://buildreposdevops/ ${{ env.WORKING_DIRECTORY }}/build --recursive
         env:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
